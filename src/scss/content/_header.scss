@@ -1,0 +1,49 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.world {
+  background-color: v.$white;
+  box-shadow: 0rem 0.5rem 1rem rgb(0 0 0 / 0.1);
+  padding-block: 2rem;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__heading {
+    cursor: pointer;
+    font-size: 1.7rem;
+  }
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  &-container {
+    cursor: pointer;
+    border: none;
+  }
+
+  .sun,
+  .moon {
+    position: absolute;
+    left: -2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .sun.off {
+    display: none;
+  }
+
+  .moon.off {
+    display: none;
+  }
+
+  &-text {
+    font-weight: 600;
+  }
+}

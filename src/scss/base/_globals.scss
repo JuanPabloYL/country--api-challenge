@@ -1,0 +1,97 @@
+@use "variables" as v;
+@use "mixins" as m;
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  @include m.tablet {
+    font-size: 1.6rem;
+  }
+  font-size: 1.4rem;
+  font-family: v.$fontFamily;
+  height: 100%;
+
+  background-color: v.$veryLightGray;
+
+  &.dark {
+    background-color: v.$veryDarkBl;
+    color: v.$white;
+
+    header,
+    input,
+    button,
+    select {
+      background-color: v.$darkBlue;
+      color: v.$white;
+    }
+
+    .country {
+      background-color: v.$darkBlue;
+    }
+
+    .sun {
+      fill: v.$white;
+    }
+  }
+}
+
+button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input {
+  font-family: inherit;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: min(95%, 140rem);
+  margin-inline: auto;
+}
+
+// Utilities
+.section {
+  margin-top: 5rem;
+}
+
+.selected-country.inactive,
+.countries.inactive,
+.filter__select.inactive,
+.filter__form.inactive {
+  display: none;
+}
+
+// Back Button
+.back {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1rem 2rem;
+
+  margin-block: 2rem;
+  font-weight: 600;
+}

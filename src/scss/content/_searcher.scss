@@ -1,0 +1,63 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.filter {
+  margin-top: 3rem;
+
+  @include m.tablet {
+    &__form {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__space {
+    display: flex;
+    box-shadow: 0rem 0.5rem 1rem rgb(0 0 0 / 0.1);
+    width: 100%;
+
+    @include m.tablet {
+      width: 50%;
+    }
+  }
+
+  &__icon {
+    padding: 0 2rem;
+    background-color: v.$white;
+    color: v.$darkGray;
+  }
+
+  #search {
+    width: 100%;
+    border: none;
+    padding: 2rem;
+    font-size: 1.8rem;
+    &:placeholder {
+      font-size: inherit;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__country {
+    margin-top: 4rem;
+
+    @include m.tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__select {
+    box-shadow: 0rem 0.5rem 1rem rgb(0 0 0 / 0.1);
+    border: none;
+    padding: 2rem 3rem;
+    font-size: 1.6rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

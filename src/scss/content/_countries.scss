@@ -1,0 +1,63 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.countries {
+  width: min(80%, 140rem);
+  margin-block: 10rem;
+  @include m.grid(1, 5rem);
+  @include m.tablet {
+    width: min(95%, 140rem);
+    @include m.grid(3, 3rem);
+  }
+
+  @include m.desktop {
+    @include m.grid(4, 6rem);
+  }
+
+  &:hover .country:not(:hover) {
+    transform: scale(0.99);
+  }
+}
+
+.country {
+  cursor: pointer;
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: v.$white;
+  box-shadow: 1rem 1.2rem 2rem rgb(0 0 0 / 0.2);
+  transition: transform 450ms;
+
+  &__img {
+    img {
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05) translateY(-0.5rem);
+  }
+
+  &:active {
+    transform: scale(0.99);
+    box-shadow: 1rem 1.2rem 1.5rem rgb(0 0 0 / 0.2);
+  }
+
+  &:hover:not(:hover) {
+    transform: scale(0.95);
+  }
+
+  &__content {
+    padding: 3rem 2rem;
+  }
+
+  &__name {
+    margin-block-end: 2rem;
+  }
+
+  &__li {
+    margin-bottom: 1rem;
+    span {
+      font-weight: 800;
+    }
+  }
+}

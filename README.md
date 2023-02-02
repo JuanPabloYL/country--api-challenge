@@ -35,7 +35,7 @@ Users should be able to:
 
 ### What I learned
 
-I learned to create interesting animations with scss, implement different functionalities with asyn await.
+I learned to create interesting animations with scss, implement different functionalities with async/ await.
 
 ### Continued development
 
